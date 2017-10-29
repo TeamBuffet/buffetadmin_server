@@ -9,7 +9,10 @@ var path=require('path');
 var bodyParser = require("body-parser");
 var cookieParser = require('cookie-parser');
 var engines = require('consolidate');
-var loginController = require("./controllers/login");
+var loginController = require("./controllers/admin/login");
+var categoryController = require("./controllers/admin/manageCategory");
+var menuController = require("./controllers/admin/menuCategory");
+var blogController = require("./controllers/api/blogFeed");
 var mysql = require('mysql');
 var router = express.Router();
 app.use(function (req, res, next) {
@@ -47,16 +50,36 @@ connection.connect();
 
 global.db = connection;
 
+//Starter
 router.get("/", function (req, res) {
     res.render("buffetadmin/index.html");
 });
 
+//Login Admin
 router.post("/login", loginController.auth);
-router.get("/test",function (req,res) {
-    res.json({"msg" : "hello"});
-});
-app.use('/', router);
 
+//Manage Category
+router.post("/addcategory",categoryController.add);
+router.post("/updatecategory",categoryController.update);
+router.get("/getallcategory",categoryController.getAll);
+router.post("/deletecategory",categoryController.delete);
+
+//Manage Menu
+router.post("/addmenu",menuController.add);
+router.post("/updatemenu",menuController.update);
+router.get("/getallmenu",menuController.getAll);
+router.post("/deletemenu",menuController.delete);
+
+//API
+//login
+
+
+//review feeds
+router.post("/review/addfeed",blogController.add);
+router.get("/review/getallfeeds",blogController.getAll);
+
+
+app.use('/', router);
 app.listen(8080);
 console.log("Listening to PORT 8080");
 
