@@ -80,6 +80,6 @@ router.get("/review/getallfeeds",blogController.getAll);
 
 
 app.use('/', router);
-app.listen(8080);
-console.log("Listening to PORT 8080");
+app.listen(8081);
+console.log("Listening to PORT 8081");
 
