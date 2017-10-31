@@ -63,13 +63,24 @@ exports.update = function (req,res) {
 exports.getAll = function (req,res) {
 
     var message = '';
+    var array_breads=[];
+    var array_pizza=[];
     var sess = req.session;
     if(req.method == "GET"){
         var sql="SELECT * FROM menu_initial JOIN menu_category ON menu_initial.category_id = menu_category.cat_id JOIN toppings ON menu_initial.topping_count=toppings.topping_id ORDER BY category_id,menu_name DESC";
         db.query(sql, function(err, results){
             if(!err){
                 //    sess.user = results[0].id;
-                message={"message":results, "error":"false"};
+
+                for(var i=0;i<results.length;i++)
+                {
+                    if(results[i].category_name==("Sides")){
+                        array_breads.push(results[i]);
+                    }else{
+                        array_pizza.push(results[i]);
+                    }
+                }
+                message={"message":{ "Sides":array_breads,"Pizza":array_pizza }, "error":"false"};
                 res.json(message);
             }
             else{
