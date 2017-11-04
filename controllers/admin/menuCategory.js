@@ -67,7 +67,7 @@ exports.getAll = function (req,res) {
     var array_pizza=[];
     var sess = req.session;
     if(req.method == "GET"){
-        var sql="SELECT * FROM menu_initial JOIN menu_category ON menu_initial.category_id = menu_category.cat_id JOIN toppings ON menu_initial.topping_count=toppings.topping_id ORDER BY category_id,menu_name DESC";
+        var sql="SELECT * FROM menu_initial JOIN menu_category ON menu_initial.category_id = menu_category.cat_id JOIN toppings ON menu_initial.topping_count=toppings.topping_id JOIN offers ON menu_initial.offer_id=offers.offer_id ORDER BY category_id,menu_name DESC";
         db.query(sql, function(err, results){
             if(!err){
                 //    sess.user = results[0].id;
