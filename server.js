@@ -5,7 +5,7 @@
 
 var express = require("express");
 var app = express();
-var path=require('path');
+var path = require('path');
 var bodyParser = require("body-parser");
 var cookieParser = require('cookie-parser');
 var engines = require('consolidate');
@@ -13,6 +13,7 @@ var loginController = require("./controllers/admin/login");
 var categoryController = require("./controllers/admin/manageCategory");
 var menuController = require("./controllers/admin/menuCategory");
 var blogController = require("./controllers/api/blogFeed");
+var walletController = require("./controllers/wallet/activateWallet");
 var mysql = require('mysql');
 var router = express.Router();
 app.use(function (req, res, next) {
@@ -39,10 +40,10 @@ app.engine('html', engines.mustache);
 app.set('view engine', 'html');
 
 var connection = mysql.createConnection({
-    host     : 'localhost',
-    user     : 'root',
-    password : '',
-    database : 'Buffet'
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: 'Buffet'
 });
 
 connection.connect();
@@ -54,30 +55,36 @@ global.db = connection;
 router.get("/", function (req, res) {
     res.render("buffetadmin/index.html");
 });
+router.get("/managecategory", function (req, res) {
+    res.render("buffetadmin/managecategory/manageCategoryView.html");
+});
 
 //Login Admin
 router.post("/login", loginController.auth);
 
 //Manage Category
-router.post("/addcategory",categoryController.add);
-router.post("/updatecategory",categoryController.update);
-router.get("/getallcategory",categoryController.getAll);
-router.post("/deletecategory",categoryController.delete);
+router.post("/addcategory", categoryController.add);
+router.post("/updatecategory", categoryController.update);
+router.get("/getallcategory", categoryController.getAll);
+router.post("/deletecategory", categoryController.delete);
 
 //Manage Menu
-router.post("/addmenu",menuController.add);
-router.post("/updatemenu",menuController.update);
-router.get("/getallmenu",menuController.getAll);
-router.post("/deletemenu",menuController.delete);
+router.post("/addmenu", menuController.add);
+router.post("/updatemenu", menuController.update);
+router.get("/getallmenu", menuController.getAll);
+router.post("/deletemenu", menuController.delete);
 
 //API
 //login
 
 
 //review feeds
-router.post("/review/addfeed",blogController.add);
-router.get("/review/getallfeeds",blogController.getAll);
+router.post("/review/addfeed", blogController.add);
+router.get("/review/getallfeeds", blogController.getAll);
 
+//wallet
+router.post("/wallet/activation", walletController.activate);
+router.post("/wallet/checkstatus", walletController.checkStatus);
 
 app.use('/', router);
 app.listen(8081);

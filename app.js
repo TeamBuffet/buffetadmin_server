@@ -7,7 +7,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var app = express();
 var cors = require('cors');
-app.use(cors({origin: 'http://localhost:3000'}));
+app.use(cors({origin: 'http://localhost:8081'}));
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -19,7 +19,7 @@ app.use(function (req, res, next) {
     var err = new Error('Not Found');
     err.status = 404;
     next(err);
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8081');
 
     // Request methods you wish to allow
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
