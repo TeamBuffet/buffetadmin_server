@@ -47,3 +47,25 @@ exports.checkStatus = function (req, res) {
     });
 
 };
+
+
+
+//getAllTransactions of User by ID
+
+exports.getAllTransactions=function(req,res){
+
+    var userID = req.body.userID;
+    var sqlCheck = "SELECT * FROM wallet_transactions WHERE user_id=" + userID;
+    db.query(sqlCheck, function (err, results) {
+        if (!err) {
+            message = {"message": results, "error": "false"};
+            res.json(message);
+        } else {
+            message = {"message": "No Transactions Yet", "error": "true"};
+            res.json(message);
+        }
+    });
+
+
+
+};
