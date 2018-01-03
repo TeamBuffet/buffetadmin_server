@@ -86,6 +86,7 @@ router.get("/review/getallfeeds", blogController.getAll);
 router.post("/wallet/activation", walletController.activate);
 router.post("/wallet/checkstatus", walletController.checkStatus);
 router.post("/wallet/gettransaction",walletController.getAllTransactions);
+router.post("/wallet/fetchprofile",walletController.getUserprofile);
 
 app.use('/', router);
 app.listen(8081);
