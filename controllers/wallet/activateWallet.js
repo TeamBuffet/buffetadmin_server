@@ -75,7 +75,7 @@ exports.getUserprofile = function (req,res) {
 
     var userID = req.body.userID;
     var sql="SELECT * FROM wallet_details INNER JOIN users_profile on wallet_details.user_id=users_profile.user_id WHERE wallet_details.user_id=?";
-    db.query(sql,[userID], function (err, results) {
+    db.query(sql,userID, function (err, results) {
         if (!err) {
             message = {"message": results, "error": "false"};
             res.json(message);
