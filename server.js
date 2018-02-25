@@ -77,6 +77,15 @@ router.post("/deletemenu", menuController.delete);
 //API
 //login
 
+//about
+router.get("/about", function (req, res) {
+    res.render("buffetadmin/about/about.html");
+});
+
+
+//utilities
+router.get("/findtoppings", menuController.findTopping);
+
 
 //review feeds
 router.post("/review/addfeed", blogController.add);
@@ -85,8 +94,8 @@ router.get("/review/getallfeeds", blogController.getAll);
 //wallet
 router.post("/wallet/activation", walletController.activate);
 router.post("/wallet/checkstatus", walletController.checkStatus);
-router.post("/wallet/gettransaction",walletController.getAllTransactions);
-router.post("/wallet/fetchprofile",walletController.getUserprofile);
+router.post("/wallet/gettransaction", walletController.getAllTransactions);
+router.post("/wallet/fetchprofile", walletController.getUserprofile);
 
 app.use('/', router);
 app.listen(8081);
