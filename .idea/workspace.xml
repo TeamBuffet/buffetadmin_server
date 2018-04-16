@@ -25,8 +25,8 @@
       <file leaf-file-name="menuManageController.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/buffetadmin/managemenu/menuManageController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="71">
-              <caret line="74" column="32" lean-forward="true" selection-start-line="74" selection-start-column="32" selection-end-line="74" selection-end-column="32" />
+            <state relative-caret-position="251">
+              <caret line="86" column="63" lean-forward="true" selection-start-line="86" selection-start-column="63" selection-end-line="86" selection-end-column="63" />
               <folding>
                 <marker date="1519566030353" expanded="false" signature="0:46" ph="/*...*/" />
               </folding>
@@ -501,7 +501,7 @@
       <workItem from="1517673686916" duration="8916000" />
       <workItem from="1517849978336" duration="17528000" />
       <workItem from="1518457978549" duration="24037000" />
-      <workItem from="1519552513437" duration="7924000" />
+      <workItem from="1519552513437" duration="8008000" />
     </task>
     <task id="LOCAL-00001" summary="#API Init">
       <created>1509309394644</created>
@@ -580,11 +580,18 @@
       <option name="project" value="LOCAL" />
       <updated>1519552549830</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="#new">
+      <created>1519576778840</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1519576778840</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="144366000" />
+    <option name="totallyTimeSpent" value="144450000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="821" extended-state="6" />
@@ -594,7 +601,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921812" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32921812" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921812" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921812" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -641,7 +648,8 @@
     <MESSAGE value="#added about page" />
     <MESSAGE value="#Updated" />
     <MESSAGE value="#Update" />
-    <option name="LAST_COMMIT_MESSAGE" value="#Update" />
+    <MESSAGE value="#new" />
+    <option name="LAST_COMMIT_MESSAGE" value="#new" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1083,8 +1091,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/buffetadmin/managemenu/menuManageController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
-          <caret line="74" column="32" lean-forward="true" selection-start-line="74" selection-start-column="32" selection-end-line="74" selection-end-column="32" />
+        <state relative-caret-position="251">
+          <caret line="86" column="63" lean-forward="true" selection-start-line="86" selection-start-column="63" selection-end-line="86" selection-end-column="63" />
           <folding>
             <marker date="1519566030353" expanded="false" signature="0:46" ph="/*...*/" />
           </folding>
