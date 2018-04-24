@@ -142,7 +142,7 @@ exports.findTopping = function (req,res) {
 exports.filterlearning = function (req,res) {
 
     var messsage ='';
-    if(req.method=="POST"){
+    if(req.method=="GET"){
         var sql = "select * from menu_initial_learning where gender='female'";
         db.query(sql,function (err,results) {
            if(!err){
