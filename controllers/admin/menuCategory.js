@@ -136,3 +136,25 @@ exports.findTopping = function (req,res) {
 
     }
 };
+
+//Learning
+
+exports.filterlearning = function (req,res) {
+
+    var messsage ='';
+    if(req.method=="POST"){
+        var sql = "select * from menu_initial_learning where gender='female'";
+        db.query(sql,function (err,results) {
+           if(!err){
+               messsage={"message":results,"error":"false"};
+               res.json(messsage);
+               console.log(messsage);
+           } else{
+               message = {"message":err,"error":"true"};
+               res.json(messsage);
+           }
+
+        });
+
+    }
+};

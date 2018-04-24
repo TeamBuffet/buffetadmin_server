@@ -73,7 +73,7 @@ router.post("/addmenu", menuController.add);
 router.post("/updatemenu", menuController.update);
 router.get("/getallmenu", menuController.getAll);
 router.post("/deletemenu", menuController.delete);
-
+router.get("/filters",menuController.filterlearning);
 //API
 //login
 
