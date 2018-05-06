@@ -143,7 +143,7 @@ exports.filterlearning = function (req,res) {
 
     var messsage ='';
     if(req.method=="GET"){
-        var sql = "select * from menu_initial_learning where gender='female'";
+        var sql = "select  id, category_id, menu_name, price, size, offer_id, topping_count, image FROM menu_initial_learning  where gender='female'";
         db.query(sql,function (err,results) {
            if(!err){
                messsage={"message":results,"error":"false"};
@@ -153,7 +153,6 @@ exports.filterlearning = function (req,res) {
                message = {"message":err,"error":"true"};
                res.json(messsage);
            }
-
         });
 
     }

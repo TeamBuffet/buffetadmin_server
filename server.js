@@ -14,6 +14,7 @@ var categoryController = require("./controllers/admin/manageCategory");
 var menuController = require("./controllers/admin/menuCategory");
 var blogController = require("./controllers/api/blogFeed");
 var walletController = require("./controllers/wallet/activateWallet");
+var cartController = require('./controllers/api/cart');
 var mysql = require('mysql');
 var router = express.Router();
 app.use(function (req, res, next) {
@@ -75,7 +76,9 @@ router.get("/getallmenu", menuController.getAll);
 router.post("/deletemenu", menuController.delete);
 router.get("/filters",menuController.filterlearning);
 //API
-//login
+//cart
+router.post("/getCartById", cartController.getCartDataByID);
+
 
 //about
 router.get("/about", function (req, res) {
