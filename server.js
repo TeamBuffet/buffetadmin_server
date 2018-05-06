@@ -15,6 +15,7 @@ var menuController = require("./controllers/admin/menuCategory");
 var blogController = require("./controllers/api/blogFeed");
 var walletController = require("./controllers/wallet/activateWallet");
 var cartController = require('./controllers/api/cart');
+var authUser = require("./controllers/api/authUser");
 var mysql = require('mysql');
 var router = express.Router();
 app.use(function (req, res, next) {
@@ -78,12 +79,16 @@ router.get("/filters",menuController.filterlearning);
 //API
 //cart
 router.post("/getCartById", cartController.getCartDataByID);
-
+router.post("/pushnewcartdata",cartController.pushCartData);
 
 //about
 router.get("/about", function (req, res) {
     res.render("buffetadmin/about/about.html");
 });
+
+//User Login
+router.post("/auth", authUser.auth);
+
 
 
 //utilities
