@@ -16,7 +16,7 @@ function initializePromise(userid,sql){
 
         });
 
-    })
+    });
 
 }
 
@@ -29,23 +29,26 @@ exports.auth = function(req, res){
         var sql="SELECT * FROM `users_profile` WHERE `phone`=?";
        var existingCheck = initializePromise(userid,sql);
        existingCheck.then(function(result){
-        message={"message":result, "error":"false"};
-        console.log("exist"+result);
-        res.json(message);
-       },function(err){
-           console.log("do not exist"+err);
-           res.json(err);
-       })
-      
-      /* db.query(sql,[userid], function(err, results){
-            if(results.length){
-                message={"message":results, "error":"false"};
+        
+        var sqlInsert = "UPDATE login_session SET timestamp = ?, login = ? WHERE user_id=?";
+        db.query(sqlInsert,[timestamp,'true',result[0].user_id], function(err, results){
+            if(!err){
+                console.log("RESULTS--> "+result[0].user_id);
+                message={"message":result, "error":"false"};
+                res.json(message);
             }
-            else{
-                message = {"message":"Invalid Credentials","error":"true"};
+            else if(err){
+                console.log("error");
+                message={"message":err, "error":"true"};
+                res.json(message);
             }
 
         });
-        */
+        console.log("exist"+result);
+       },function(err){
+           console.log("do not exist"+err);
+           message={"message":err, "error":"true"};
+           res.json(message);
+       });
     }
 };
