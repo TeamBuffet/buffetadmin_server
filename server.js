@@ -16,6 +16,7 @@ var blogController = require("./controllers/api/blogFeed");
 var walletController = require("./controllers/wallet/activateWallet");
 var cartController = require('./controllers/api/cart');
 var authUser = require("./controllers/api/authUser");
+var order_history = require("./controllers/api/manage_orders");
 var mysql = require('mysql');
 var router = express.Router();
 app.use(function (req, res, next) {
@@ -80,6 +81,10 @@ router.get("/filters",menuController.filterlearning);
 //cart
 router.post("/getCartById", cartController.getCartDataByID);
 router.post("/pushnewcartdata",cartController.pushCartData);
+
+//orders
+router.get("/getallorders", order_history.getAll);
+
 
 //about
 router.get("/about", function (req, res) {
