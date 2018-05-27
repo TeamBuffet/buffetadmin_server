@@ -15,8 +15,9 @@ exports.add = function(req, res){
         var size = req.body.size;
         var offerID = req.body.offer_id;
         var toppingsCount = req.body.toppings_allowed;
-        var sql="INSERT INTO menu_initial(category_id,menu_name,price,size,offer_id,topping_count) VALUES (?,?,?,?,?,?)";
-        db.query(sql,[category,menuName,price,size,offerID,toppingsCount], function(err, results){
+        var image = req.body.image;
+        var sql="INSERT INTO menu_initial(category_id,menu_name,price,size,offer_id,topping_count,image) VALUES (?,?,?,?,?,?,?)";
+        db.query(sql,[category,menuName,price,size,offerID,toppingsCount,image], function(err, results){
             if(!err){
                 //    sess.user = results[0].id;
                 message={"message":"Added Successfully", "error":"false"};
@@ -43,8 +44,9 @@ exports.update = function (req,res) {
         var size = req.body.size;
         var offerID = req.body.offer_id;
         var toppingsCount = req.body.toppings_allowed;
-        var sql="UPDATE menu_initial SET category_id = ?, menu_name = ?, price = ?, size =?, offer_id = ?, topping_count = ? WHERE id = ? ";
-        db.query(sql,[category,menuName,price,size,offerID,toppingsCount,id], function(err, results){
+        var image = req.body.image;
+        var sql="UPDATE menu_initial SET category_id = ?, menu_name = ?, price = ?, size =?, offer_id = ?, topping_count = ?,image=?, WHERE id = ? ";
+        db.query(sql,[category,menuName,price,size,offerID,toppingsCount,image,id], function(err, results){
             if(!err){
                 //    sess.user = results[0].id;
                 message={"message":"Added Successfully", "error":"false"};
