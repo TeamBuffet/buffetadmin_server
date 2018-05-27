@@ -91,7 +91,7 @@ router.get("/ordersfetch",orders.getAllOrders);
 
 //reports
 router.get("/fetchcounts",reports.getAllCounts);
-
+router.get("/analysis",reports.analyse);
 //about
 router.get("/about", function (req, res) {
     res.render("buffetadmin/about/about.html");
