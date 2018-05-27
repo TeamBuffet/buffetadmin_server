@@ -17,7 +17,9 @@ var walletController = require("./controllers/wallet/activateWallet");
 var cartController = require('./controllers/api/cart');
 var authUser = require("./controllers/api/authUser");
 var order_history = require("./controllers/api/manage_orders");
-var orders = require("./controllers/admin/orders")
+var orders = require("./controllers/admin/orders");
+var reports = require("./controllers/admin/reports");
+
 var mysql = require('mysql');
 var router = express.Router();
 app.use(function (req, res, next) {
@@ -86,6 +88,9 @@ router.post("/pushnewcartdata",cartController.pushCartData);
 //orders
 router.get("/getallorders", order_history.getAll);
 router.get("/ordersfetch",orders.getAllOrders);
+
+//reports
+router.get("/fetchcounts",reports.getAllCounts);
 
 //about
 router.get("/about", function (req, res) {
