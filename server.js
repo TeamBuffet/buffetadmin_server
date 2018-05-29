@@ -19,6 +19,7 @@ var authUser = require("./controllers/api/authUser");
 var order_history = require("./controllers/api/manage_orders");
 var orders = require("./controllers/admin/orders");
 var reports = require("./controllers/admin/reports");
+var app_anal = require("./controllers/admin/app_analysis");
 
 var mysql = require('mysql');
 var router = express.Router();
@@ -92,6 +93,7 @@ router.get("/ordersfetch",orders.getAllOrders);
 //reports
 router.get("/fetchcounts",reports.getAllCounts);
 router.get("/analysis",reports.analyse);
+router.get("/app_analysis",app_anal.app_anal);
 //about
 router.get("/about", function (req, res) {
     res.render("buffetadmin/about/about.html");
